@@ -1,0 +1,26 @@
+
+.home-image-container {
+    width: auto;
+    position: relative;
+
+    .img-home {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+}
+
+.home-title-container {
+    position: absolute;
+    top: 50%;
+    margin: 0 15%;
+    color: #fff;
+
+    .animate__zoomIn {
+        animation: zoomIn;
+        animation-duration: 2200ms;
+    }
+
+}
+
+
