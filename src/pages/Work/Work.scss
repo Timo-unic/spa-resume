@@ -1,0 +1,27 @@
+
+.work-container {
+    display: flex;
+
+    .work-content {
+        width: 60%;
+        padding: 70px;
+
+        .work-content-title {
+            margin: 0px;
+            font-size: 110px;
+            font-weight: bold;
+            color: #e5e5e5;
+        }
+        .work-content-subtitle {
+            margin: 0px;
+            margin-bottom: 20px;
+            color: #232a34;
+        }
+    }
+
+    .img-work {
+        width: 40%;
+        height: 100%;
+    }
+}
+

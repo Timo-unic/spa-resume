@@ -2,11 +2,11 @@
 .home-image-container {
     width: auto;
     position: relative;
+    margin: 0;
 
     .img-home {
         width: 100%;
         height: auto;
-        object-fit: cover;
     }
 }
 

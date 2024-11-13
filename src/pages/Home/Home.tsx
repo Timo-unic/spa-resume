@@ -9,7 +9,7 @@ const Home = (props: Props) => {
     return (
         <>
             <Typography component="div" className="home-image-container">
-                <img src={home} alt="home_image" className="img-home" />
+                <img src={home} alt="image_home" className="img-home" />
             </Typography>
             <Container className="home-title-container">
                 <Typography
