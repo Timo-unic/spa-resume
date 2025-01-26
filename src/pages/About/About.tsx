@@ -18,12 +18,12 @@ const About = (props: Props) => {
                         INSPIRED BY DIFFERENCE.
                     </h3>
 
-                    <h5 className="about-content-intro">
+                    <h4 className="about-content-intro">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                         Sed consectetur a nisl a tincidunt. Etiam placerat velit
                         sem, vel suscipit augue fermentum nec. Sociis natoque
                         penatibus et magnis dis.
-                    </h5>
+                    </h4>
                     <p className="about-content-text">
                         Parturient montes, nascetur ridiculus mus. Maecenas ac
                         finibus turpis. Vivamus et elit in leo pretium pharetra.

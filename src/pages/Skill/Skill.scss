@@ -1,23 +1,23 @@
 
-.about-container {
+.skill-container {
     display: flex;
 
-    .about-content {
+    .skill-content {
         width: 60%;
         padding: 70px;
 
-        .about-content-title {
+        .skill-content-title {
             margin: 0px;
             font-size: 110px;
             font-weight: bold;
             color: #e5e5e5;
         }
-        .about-content-subtitle {
+        .skill-content-subtitle {
             margin: 0px;
             margin-bottom: 20px;
             color: #232a34;
         }
-        .about-content-intro {
+        .skill-content-intro {
             color: #7e8890;
             font-style: italic;
             font-size: 19px;
@@ -25,8 +25,13 @@
             letter-spacing: 1px;
             line-height: 1.95;
         }
-        .about-content-text {
-            margin-bottom: 30px;
+        .skill-content-item {
+            margin-bottom: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .skill-content-text {
+            margin-bottom: 20px;
             color: #7e8890;
             font-size: 16px;
             font-weight: normal;
@@ -43,7 +48,7 @@
         }
     }
 
-    .img-about {
+    .img-skill {
         width: 40%;
         height: 100%;
     }

@@ -1,23 +1,25 @@
 
-.about-container {
+.experience-container {
     display: flex;
+    background-color: #232a34;
 
-    .about-content {
+    .experience-content {
         width: 60%;
         padding: 70px;
 
-        .about-content-title {
+        .experience-content-title {
             margin: 0px;
             font-size: 110px;
             font-weight: bold;
-            color: #e5e5e5;
+            color: #333c4e;
+            line-height: 1;
         }
-        .about-content-subtitle {
+        .experience-content-subtitle {
             margin: 0px;
             margin-bottom: 20px;
-            color: #232a34;
+            color: #fff;
         }
-        .about-content-intro {
+        .experience-content-intro {
             color: #7e8890;
             font-style: italic;
             font-size: 19px;
@@ -25,8 +27,15 @@
             letter-spacing: 1px;
             line-height: 1.95;
         }
-        .about-content-text {
-            margin-bottom: 30px;
+        .experience-content-item {
+            margin-bottom: 20px;
+            color: #fff;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 1.5;
+        }
+        .experience-content-text {
+            margin-bottom: 20px;
             color: #7e8890;
             font-size: 16px;
             font-weight: normal;
@@ -43,7 +52,7 @@
         }
     }
 
-    .img-about {
+    .img-experience {
         width: 40%;
         height: 100%;
     }
