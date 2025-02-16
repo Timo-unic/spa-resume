@@ -2,10 +2,10 @@ import { Button, Typography } from '@mui/material'
 import imageSkill from 'assets/skill_bg.jpg'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import './Skill.scss'
-import BandSkills from 'components/Band/BandSkills'
+import SkillsProgress from 'components/Band/SkillsProgress'
+import dataSkill from 'utils/dataSkill'
 
-type Props = {}
-const Skill = (props: Props) => {
+const Skill = () => {
     return (
         <>
             <Typography
@@ -25,7 +25,13 @@ const Skill = (props: Props) => {
                         sem, vel suscipit augue fermentum nec. Sociis natoque
                         penatibus et magnis dis.
                     </h4>
-                    <BandSkills />
+                    {dataSkill.map((skill) => (
+                        <SkillsProgress
+                            key={skill.key}
+                            label={skill.label ?? 'Unknown Skill'}
+                            value={skill.value}
+                        />
+                    ))}
                     <h5 className="skill-content-item">
                         THE USER MUST COME FIRST.
                     </h5>
@@ -39,8 +45,10 @@ const Skill = (props: Props) => {
                     </p>
                     <Button
                         variant="contained"
+                        size="large"
+                        color="warning"
                         startIcon={<ExpandMoreIcon />}
-                        sx={{ marginTop: '50px' }}
+                        sx={{ marginTop: '30px' }}
                     >
                         CLIENTS
                     </Button>
@@ -51,3 +59,10 @@ const Skill = (props: Props) => {
     )
 }
 export default Skill
+
+/* <SkillsProgress label="PHOTOSHOP" value={85} />
+<SkillsProgress label="UX/UI DESIGN" value={90} />
+<SkillsProgress label="HTML/CSS" value={78} />
+<SkillsProgress label="ILLUSTRATOR" value={93} />
+<SkillsProgress label="JAVASCRIPT" value={85} />
+<SkillsProgress label="BRANDING" value={95} /> */

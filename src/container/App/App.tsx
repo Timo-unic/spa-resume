@@ -1,12 +1,10 @@
 import { CssBaseline } from '@mui/material'
-import Footer from 'container/Footer/Footer'
-import Header from 'container/Header/Header'
-import Main from 'container/Main/Main'
 import {
     createTheme,
     StyledEngineProvider,
     ThemeProvider,
 } from '@mui/material/styles'
+import AppMenu from 'components/Menu/AppMenu'
 
 type Props = {}
 
@@ -20,9 +18,7 @@ const App = (props: Props) => {
         <StyledEngineProvider injectFirst>
             <ThemeProvider theme={theme}>
                 <CssBaseline />
-                <Header />
-                <Main />
-                <Footer />
+                <AppMenu />
             </ThemeProvider>
         </StyledEngineProvider>
     )

@@ -21,8 +21,13 @@ const Home = (props: Props) => {
                     <h2>
                         CLEAR THINKING <br /> MADE VISUAL.
                     </h2>
-                    <h4>JONNY SMOOTH • WEB DESIGNER</h4>
-                    <Button variant="contained" startIcon={<ExpandMoreIcon />}>
+                    <h6>JONNY SMOOTH • WEB DESIGNER</h6>
+                    <Button
+                        variant="contained"
+                        size="large"
+                        color="warning"
+                        startIcon={<ExpandMoreIcon />}
+                    >
                         LEARN MORE
                     </Button>
                 </Typography>

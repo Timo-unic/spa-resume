@@ -1,0 +1,35 @@
+
+.contact-container {
+    display: flex;
+
+    .contact-content {
+        width: 60%;
+        padding: 70px;
+
+        .contact-content-title {
+            margin: 0px;
+            font-size: 110px;
+            font-weight: bold;
+            color: #e5e5e5;
+        }
+        .contact-content-subtitle {
+            margin: 0px;
+            margin-bottom: 20px;
+            color: #232a34;
+        }
+        .contact-content-intro {
+            color: #7e8890;
+            font-style: italic;
+            font-size: 19px;
+            font-weight: normal;
+            letter-spacing: 1px;
+            line-height: 1.95;
+        }
+    }
+
+    .img-contact {
+        width: 40%;
+        height: auto;
+    }
+}
+

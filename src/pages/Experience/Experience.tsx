@@ -26,19 +26,25 @@ const Experience = (props: Props) => {
                         sem, vel suscipit augue fermentum nec. Sociis natoque
                         penatibus et magnis dis.
                     </h4>
-                    <h5 className="experience-content-item">01. DIGITAL.</h5>
+                    <span className="experience-content-item">
+                        01. DIGITAL.
+                    </span>
                     <p className="experience-content-text">
                         Ut enim ad minima veniam, quis nostrum exercitationem
                         ullam corporis suscipit laboriosam, nisi ut aliqui. Quos
                         dolores et quas molestias un occaecati.
                     </p>
-                    <h5 className="experience-content-item">02. BRANDING.</h5>
+                    <span className="experience-content-item">
+                        02. BRANDING.
+                    </span>
                     <p className="experience-content-text">
                         Nam ante mauris, cursus ut nisl vitae, scelerisque
                         tincidunt turpis. In pulvinar est sit amet massa gravida
                         blandit.
                     </p>
-                    <h5 className="experience-content-item">03. MARKETING.</h5>
+                    <span className="experience-content-item">
+                        03. MARKETING.
+                    </span>
                     <p className="experience-content-text">
                         Phasellus pharetra est varius sagittis consectetur.
                         Etiam libero lorem, scelerisque eget tristique mattis
@@ -46,8 +52,10 @@ const Experience = (props: Props) => {
                     </p>
                     <Button
                         variant="contained"
+                        size="large"
+                        color="warning"
                         startIcon={<ExpandMoreIcon />}
-                        sx={{ marginTop: '50px' }}
+                        sx={{ marginTop: '20px' }}
                         className="btn-pages"
                     >
                         SKILL

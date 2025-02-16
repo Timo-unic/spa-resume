@@ -4,7 +4,7 @@
 
     .skill-content {
         width: 60%;
-        padding: 70px;
+        padding: 40px;
 
         .skill-content-title {
             margin: 0px;
@@ -14,7 +14,7 @@
         }
         .skill-content-subtitle {
             margin: 0px;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
             color: #232a34;
         }
         .skill-content-intro {
@@ -26,19 +26,18 @@
             line-height: 1.95;
         }
         .skill-content-item {
-            margin-bottom: 20px;
+            margin-bottom: 10px;
             font-size: 18px;
             font-weight: bold;
         }
         .skill-content-text {
-            margin-bottom: 20px;
+            margin-bottom: 10px;
             color: #7e8890;
             font-size: 16px;
             font-weight: normal;
             line-height: 1.8;
         }
         .btn-pages {
-            margin-top: 30px;
             display: flex;
             justify-content: space-between;
             color: #fff;

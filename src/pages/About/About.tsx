@@ -44,6 +44,8 @@ const About = (props: Props) => {
                     </p>
                     <Button
                         variant="contained"
+                        size="large"
+                        color="warning"
                         startIcon={<ExpandMoreIcon />}
                         sx={{ marginTop: '50px' }}
                     >

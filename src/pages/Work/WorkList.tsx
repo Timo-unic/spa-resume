@@ -23,6 +23,8 @@ const WorkList = (props: Props) => {
                     </Grid>
                     <Button
                         variant="contained"
+                        size="large"
+                        color="warning"
                         startIcon={<ExpandMoreIcon />}
                         sx={{ marginTop: '50px' }}
                     >

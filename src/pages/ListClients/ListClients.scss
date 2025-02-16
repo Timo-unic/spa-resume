@@ -1,0 +1,73 @@
+
+.list-client-container {
+    display: flex;
+    background-color: #232a34;
+
+    .list-client-content {
+        width: 60%;
+        padding: 50px;
+
+        .list-client-content-title {
+            margin: 0px;
+            font-size: 110px;
+            font-weight: bold;
+            color: #333c4e;
+            line-height: 1;
+        }
+        .list-client-content-subtitle {
+            margin: 0px;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+        .list-client-content-intro {
+            color: #7e8890;
+            font-style: italic;
+            font-size: 19px;
+            font-weight: normal;
+            letter-spacing: 1px;
+            line-height: 1.95;
+        }
+        .list-client-content-item {
+            display: flex;
+            margin-bottom: 10px;
+            color: #fff;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 1.5;
+
+            .list-client-content-item-text {
+                margin-bottom: 20px;
+                color: #fff;
+                font-style: italic;
+                font-size: 20px;
+                font-weight: normal;
+                line-height: 37px;
+            }
+
+            .list-client-content-item-image {
+                margin-right: 20px;
+                color: #7e8890;
+                font-weight: bolder;
+                font-size: 16px;
+            }
+        }
+        
+        .btn-pages {
+            margin-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            color: #fff;
+            font-size: 24px;
+            font-weight: 500;
+            border-radius: 0px;
+            width: fit-content;
+            cursor: pointer;
+        }
+    }
+
+    .img-list-client {
+        width: 40%;
+        height: 100%;
+    }
+}
+
