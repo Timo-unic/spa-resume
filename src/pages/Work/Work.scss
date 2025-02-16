@@ -1,0 +1,37 @@
+
+.work-container {
+    display: flex;
+
+    .work-content {
+        width: 60%;
+        padding: 50px;
+        background: #e5e5e5;
+
+        .work-content-title {
+            margin: 0px;
+            font-size: 110px;
+            font-weight: bold;
+            color: #fff;
+        }
+        .work-content-subtitle {
+            margin: 0px;
+            margin-bottom: 20px;
+            color: #232a34;
+        }
+        .btn-pages {
+            margin-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            color: #fff;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+        }
+    }
+
+    .img-work {
+        width: 40%;
+        height: 100%;
+    }
+}
+

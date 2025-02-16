@@ -1,0 +1,27 @@
+
+.home-image-container {
+    width: auto;
+    position: relative;
+    margin-bottom: -7px; 
+    // невідомий відступ!!!!
+
+    .img-home {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.home-title-container {
+    position: absolute;
+    top: 35%;
+    margin: 0 15%;
+    color: #fff;
+
+    .animate__zoomIn {
+        animation: zoomIn;
+        animation-duration: 2200ms;
+    }
+
+}
+
+
