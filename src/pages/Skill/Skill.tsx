@@ -7,7 +7,7 @@ import dataSkill from 'utils/dataSkill'
 
 const Skill = () => {
     return (
-        <>
+        <div id="skill">
             <Typography
                 variant="h4"
                 component="div"
@@ -55,7 +55,7 @@ const Skill = () => {
                 </div>
                 <img src={imageSkill} alt="image_skill" className="img-skill" />
             </Typography>
-        </>
+        </div>
     )
 }
 export default Skill

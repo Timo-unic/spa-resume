@@ -7,7 +7,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 type Props = {}
 const Home = (props: Props) => {
     return (
-        <>
+        <div id="home">
             <Typography component="div" className="home-image-container">
                 <img src={home} alt="image_home" className="img-home" />
             </Typography>
@@ -32,7 +32,7 @@ const Home = (props: Props) => {
                     </Button>
                 </Typography>
             </Container>
-        </>
+        </div>
     )
 }
 export default Home

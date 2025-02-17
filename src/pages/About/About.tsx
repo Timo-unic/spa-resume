@@ -6,7 +6,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 type Props = {}
 const About = (props: Props) => {
     return (
-        <>
+        <div id="about">
             <Typography
                 variant="h4"
                 component="div"
@@ -54,7 +54,7 @@ const About = (props: Props) => {
                 </div>
                 <img src={imageAbout} alt="image_about" className="img-about" />
             </Typography>
-        </>
+        </div>
     )
 }
 export default About

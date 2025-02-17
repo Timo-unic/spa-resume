@@ -9,7 +9,7 @@ type Props = {}
 
 const WorkList = (props: Props) => {
     return (
-        <>
+        <div id="work">
             <Typography variant="h4" component="div" className="work-container">
                 <div className="work-content">
                     <h2 className="work-content-title">Work.</h2>
@@ -33,7 +33,7 @@ const WorkList = (props: Props) => {
                 </div>
                 <img src={imageWork} alt="image_work" className="img-work" />
             </Typography>
-        </>
+        </div>
     )
 }
 export default WorkList

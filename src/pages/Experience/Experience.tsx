@@ -6,7 +6,7 @@ import './Experience.scss'
 type Props = {}
 const Experience = (props: Props) => {
     return (
-        <>
+        <div id="experience">
             <Typography
                 variant="h4"
                 component="div"
@@ -67,7 +67,7 @@ const Experience = (props: Props) => {
                     className="img-experience"
                 />
             </Typography>
-        </>
+        </div>
     )
 }
 export default Experience

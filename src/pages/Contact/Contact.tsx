@@ -7,7 +7,7 @@ import FormDataApp from 'components/FormDataApp/FormDataApp'
 type Props = {}
 const Contact = (props: Props) => {
     return (
-        <>
+        <div id="contact">
             <Typography
                 variant="h4"
                 component="div"
@@ -31,7 +31,7 @@ const Contact = (props: Props) => {
                     className="img-contact"
                 />
             </Typography>
-        </>
+        </div>
     )
 }
 export default Contact

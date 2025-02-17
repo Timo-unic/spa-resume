@@ -1,4 +1,3 @@
-import Box from '@mui/material/Box'
 import Drawer from '@mui/material/Drawer'
 import CssBaseline from '@mui/material/CssBaseline'
 import Toolbar from '@mui/material/Toolbar'
@@ -15,50 +14,91 @@ import BatchPredictionIcon from '@mui/icons-material/BatchPrediction'
 import AssessmentIcon from '@mui/icons-material/Assessment'
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined'
 import CallIcon from '@mui/icons-material/Call'
-import Main from 'container/Main/Main'
 import Logo from 'components/Logo/Logo'
 import './AppBarMenu.scss'
+import Footer from 'container/Footer/Footer'
+import About from 'pages/About/About'
+import Contact from 'pages/Contact/Contact'
+import Experience from 'pages/Experience/Experience'
+import Home from 'pages/Home/Home'
+import ListClients from 'pages/ListClients/ListClients'
+import Skill from 'pages/Skill/Skill'
+import WorkList from 'pages/Work/WorkList'
+import { Link } from 'react-router-dom'
+import { useRef } from 'react'
+import { Box } from '@mui/material'
 
 const drawerItems = [
     {
         text: 'Home',
         icon: <HomeIcon className="icon-style" />,
         path: '/',
+        refitem: 'homeRef',
     },
     {
         text: 'About',
         icon: <PersonIcon className="icon-style" />,
-        path: '/about',
+        path: 'about',
+        refitem: 'aboutRef',
     },
     {
         text: 'Work',
         icon: <WorkIcon className="icon-style" />,
-        path: '/work',
+        path: 'work',
+        refitem: 'workRef',
     },
     {
         text: 'Experience',
         icon: <BatchPredictionIcon className="icon-style" />,
-        path: '/experience',
+        path: 'experience',
+        refitem: 'experienceRef',
     },
     {
         text: 'Skill',
         icon: <AssessmentIcon className="icon-style" />,
-        path: '/skill',
+        path: 'skill',
+        refitem: 'skillRef',
     },
     {
         text: 'Clients',
         icon: <FavoriteBorderOutlinedIcon className="icon-style" />,
-        path: '/clients',
+        path: 'clients',
+        refitem: 'clientsRef',
     },
     {
         text: 'Contact',
         icon: <CallIcon className="icon-style" />,
-        path: '/contact',
+        path: 'contact',
+        refitem: 'contactRef',
     },
 ]
 
 const drawerWidth = 240
 const AppMenu = () => {
+    const homeRef = useRef<HTMLDivElement>(null)
+    const aboutRef = useRef<HTMLDivElement>(null)
+    const workRef = useRef<HTMLDivElement>(null)
+    const experienceRef = useRef<HTMLDivElement>(null)
+    const skillRef = useRef<HTMLDivElement>(null)
+    const clientsRef = useRef<HTMLDivElement>(null)
+    const contactRef = useRef<HTMLDivElement>(null)
+
+    const refs = [
+        homeRef,
+        aboutRef,
+        workRef,
+        experienceRef,
+        skillRef,
+        clientsRef,
+        contactRef,
+    ]
+
+    const handleScrollToSection = (
+        sectionRef: React.RefObject<HTMLDivElement>
+    ) => {
+        sectionRef.current?.scrollIntoView({ behavior: 'smooth' })
+    }
+
     return (
         <Box sx={{ display: 'flex' }}>
             <CssBaseline />
@@ -74,29 +114,62 @@ const AppMenu = () => {
                     },
                 }}
                 variant="permanent"
-                anchor="left"
             >
                 <Logo />
                 <Toolbar />
-                <Divider />
+
                 <List>
-                    {drawerItems.map(({ text, icon }) => (
+                    {drawerItems.map(({ text, icon, path, refitem }, index) => (
                         <ListItem key={text} disablePadding>
-                            <ListItemButton className="list-item-btn">
-                                <ListItemIcon className="list-item-icon">
-                                    {icon}
-                                </ListItemIcon>
-                                <ListItemText
-                                    className="list-item-text"
-                                    primary={text}
-                                />
+                            <ListItemButton
+                                className="list-item-btn"
+                                onClick={() =>
+                                    handleScrollToSection(refs[index])
+                                }
+                            >
+                                <Link to={path}>
+                                    <ListItemIcon className="list-item-icon">
+                                        {icon}
+                                    </ListItemIcon>
+                                    <ListItemText
+                                        className="list-item-text"
+                                        primary={text}
+                                    />
+                                </Link>
                             </ListItemButton>
                             <Divider />
                         </ListItem>
                     ))}
                 </List>
             </Drawer>
-            <Main />
+            <Box
+                component="main"
+                sx={{ flexGrow: 1, bgcolor: 'background.default' }}
+            >
+                <div ref={homeRef}>
+                    <Home />
+                </div>
+                <div ref={aboutRef}>
+                    <About />
+                </div>
+                <div ref={workRef}>
+                    <WorkList />
+                </div>
+                <div ref={experienceRef}>
+                    <Experience />
+                </div>
+                <div ref={skillRef}>
+                    <Skill />
+                </div>
+                <div ref={clientsRef}>
+                    <ListClients />
+                </div>
+                <div ref={contactRef}>
+                    <Contact />
+                </div>
+
+                <Footer />
+            </Box>
         </Box>
     )
 }
