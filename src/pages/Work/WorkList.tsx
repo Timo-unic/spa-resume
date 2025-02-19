@@ -5,11 +5,13 @@ import './Work.scss'
 import WorkListItem from './WorkListItem'
 import worksArray from 'utils/worksArray'
 
-type Props = {}
+type Props = {
+    handleScrollToSection: () => void
+}
 
-const WorkList = (props: Props) => {
+const WorkList = ({ handleScrollToSection }: Props) => {
     return (
-        <>
+        <div id="work">
             <Typography variant="h4" component="div" className="work-container">
                 <div className="work-content">
                     <h2 className="work-content-title">Work.</h2>
@@ -22,6 +24,7 @@ const WorkList = (props: Props) => {
                         ))}
                     </Grid>
                     <Button
+                        onClick={() => handleScrollToSection()}
                         variant="contained"
                         size="large"
                         color="warning"
@@ -33,7 +36,7 @@ const WorkList = (props: Props) => {
                 </div>
                 <img src={imageWork} alt="image_work" className="img-work" />
             </Typography>
-        </>
+        </div>
     )
 }
 export default WorkList

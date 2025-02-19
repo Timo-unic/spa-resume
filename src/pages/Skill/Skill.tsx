@@ -5,9 +5,12 @@ import './Skill.scss'
 import SkillsProgress from 'components/Band/SkillsProgress'
 import dataSkill from 'utils/dataSkill'
 
-const Skill = () => {
+type Props = {
+    handleScrollToSection: () => void
+}
+const Skill = ({ handleScrollToSection }: Props) => {
     return (
-        <>
+        <div id="skill">
             <Typography
                 variant="h4"
                 component="div"
@@ -44,6 +47,7 @@ const Skill = () => {
                         molestiae.
                     </p>
                     <Button
+                        onClick={() => handleScrollToSection()}
                         variant="contained"
                         size="large"
                         color="warning"
@@ -55,14 +59,7 @@ const Skill = () => {
                 </div>
                 <img src={imageSkill} alt="image_skill" className="img-skill" />
             </Typography>
-        </>
+        </div>
     )
 }
 export default Skill
-
-/* <SkillsProgress label="PHOTOSHOP" value={85} />
-<SkillsProgress label="UX/UI DESIGN" value={90} />
-<SkillsProgress label="HTML/CSS" value={78} />
-<SkillsProgress label="ILLUSTRATOR" value={93} />
-<SkillsProgress label="JAVASCRIPT" value={85} />
-<SkillsProgress label="BRANDING" value={95} /> */

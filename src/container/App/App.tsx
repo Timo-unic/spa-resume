@@ -4,7 +4,7 @@ import {
     StyledEngineProvider,
     ThemeProvider,
 } from '@mui/material/styles'
-import AppMenu from 'components/Menu/AppMenu'
+import AppMainLayout from 'container/Main/AppMainLayout'
 
 type Props = {}
 
@@ -18,7 +18,7 @@ const App = (props: Props) => {
         <StyledEngineProvider injectFirst>
             <ThemeProvider theme={theme}>
                 <CssBaseline />
-                <AppMenu />
+                <AppMainLayout />
             </ThemeProvider>
         </StyledEngineProvider>
     )

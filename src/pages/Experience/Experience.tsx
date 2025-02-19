@@ -3,10 +3,12 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import imageExperience from 'assets/experience_bg.jpg'
 import './Experience.scss'
 
-type Props = {}
-const Experience = (props: Props) => {
+type Props = {
+    handleScrollToSection: () => void
+}
+const Experience = ({ handleScrollToSection }: Props) => {
     return (
-        <>
+        <div id="experience">
             <Typography
                 variant="h4"
                 component="div"
@@ -51,6 +53,7 @@ const Experience = (props: Props) => {
                         metus sit amet pulvinar vitae, finibus nec eros.
                     </p>
                     <Button
+                        onClick={() => handleScrollToSection()}
                         variant="contained"
                         size="large"
                         color="warning"
@@ -67,7 +70,7 @@ const Experience = (props: Props) => {
                     className="img-experience"
                 />
             </Typography>
-        </>
+        </div>
     )
 }
 export default Experience
