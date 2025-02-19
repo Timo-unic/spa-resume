@@ -6,8 +6,10 @@ import imageListClientTwo from 'assets/testimonial-2.jpg'
 import imageListClientThree from 'assets/testimonial-3.jpg'
 import './ListClients.scss'
 
-type Props = {}
-const ListClients = (props: Props) => {
+type Props = {
+    handleScrollToSection: () => void
+}
+const ListClients = ({ handleScrollToSection }: Props) => {
     return (
         <div id="clients">
             <div className="list-client-wrapper">
@@ -83,6 +85,7 @@ const ListClients = (props: Props) => {
                 </Typography>
 
                 <Button
+                    onClick={() => handleScrollToSection()}
                     variant="contained"
                     size="large"
                     color="warning"

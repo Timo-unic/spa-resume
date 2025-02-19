@@ -24,9 +24,10 @@ import Home from 'pages/Home/Home'
 import ListClients from 'pages/ListClients/ListClients'
 import Skill from 'pages/Skill/Skill'
 import WorkList from 'pages/Work/WorkList'
-import { Link } from 'react-router-dom'
 import { useRef } from 'react'
 import { Box } from '@mui/material'
+import { NavLink } from 'react-router-dom'
+// import { NavLink } from 'react-router-dom'
 
 const drawerItems = [
     {
@@ -93,11 +94,13 @@ const AppMenu = () => {
         contactRef,
     ]
 
-    const handleScrollToSection = (
-        sectionRef: React.RefObject<HTMLDivElement>
-    ) => {
+    const scrollToSection = (sectionRef: React.RefObject<HTMLDivElement>) => {
         sectionRef.current?.scrollIntoView({ behavior: 'smooth' })
     }
+
+    const handleScrollToSection = (
+        sectionRef: React.RefObject<HTMLDivElement>
+    ) => scrollToSection(sectionRef)
 
     return (
         <Box sx={{ display: 'flex' }}>
@@ -111,13 +114,13 @@ const AppMenu = () => {
                         boxSizing: 'border-box',
                         backgroundColor: '#232a34',
                         color: '#fff',
+                        overflow: 'auto',
                     },
                 }}
                 variant="permanent"
             >
                 <Logo />
                 <Toolbar />
-
                 <List>
                     {drawerItems.map(({ text, icon, path, refitem }, index) => (
                         <ListItem key={text} disablePadding>
@@ -127,7 +130,15 @@ const AppMenu = () => {
                                     handleScrollToSection(refs[index])
                                 }
                             >
-                                <Link to={path}>
+                                <NavLink
+                                    style={{ textDecorationLine: 'none' }}
+                                    to={path}
+                                    className={({ isActive }) =>
+                                        isActive
+                                            ? 'list-item-btn-style-active'
+                                            : 'list-item-btn-style'
+                                    }
+                                >
                                     <ListItemIcon className="list-item-icon">
                                         {icon}
                                     </ListItemIcon>
@@ -135,8 +146,9 @@ const AppMenu = () => {
                                         className="list-item-text"
                                         primary={text}
                                     />
-                                </Link>
+                                </NavLink>
                             </ListItemButton>
+
                             <Divider />
                         </ListItem>
                     ))}
@@ -147,22 +159,46 @@ const AppMenu = () => {
                 sx={{ flexGrow: 1, bgcolor: 'background.default' }}
             >
                 <div ref={homeRef}>
-                    <Home />
+                    <Home
+                        handleScrollToSection={() =>
+                            handleScrollToSection(aboutRef)
+                        }
+                    />
                 </div>
                 <div ref={aboutRef}>
-                    <About />
+                    <About
+                        handleScrollToSection={() =>
+                            handleScrollToSection(workRef)
+                        }
+                    />
                 </div>
                 <div ref={workRef}>
-                    <WorkList />
+                    <WorkList
+                        handleScrollToSection={() =>
+                            handleScrollToSection(experienceRef)
+                        }
+                    />
                 </div>
                 <div ref={experienceRef}>
-                    <Experience />
+                    <Experience
+                        handleScrollToSection={() =>
+                            handleScrollToSection(skillRef)
+                        }
+                    />
                 </div>
                 <div ref={skillRef}>
-                    <Skill />
+                    <Skill
+                        handleScrollToSection={() =>
+                            handleScrollToSection(clientsRef)
+                        }
+                    />
                 </div>
                 <div ref={clientsRef}>
-                    <ListClients />
+                    <ListClients
+                        handleScrollToSection={() =>
+                            handleScrollToSection(contactRef)
+                        }
+                    />
                 </div>
                 <div ref={contactRef}>
                     <Contact />

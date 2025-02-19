@@ -3,8 +3,10 @@ import imageAbout from 'assets/avada-resume-about.jpg'
 import './About.scss'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 
-type Props = {}
-const About = (props: Props) => {
+type Props = {
+    handleScrollToSection: () => void
+}
+const About = ({ handleScrollToSection }: Props) => {
     return (
         <div id="about">
             <Typography
@@ -43,6 +45,7 @@ const About = (props: Props) => {
                         mollis iaculis risus.
                     </p>
                     <Button
+                        onClick={() => handleScrollToSection()}
                         variant="contained"
                         size="large"
                         color="warning"
