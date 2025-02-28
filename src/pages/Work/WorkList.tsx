@@ -3,13 +3,15 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import imageWork from 'assets/works_bg_900x1600.jpg'
 import './Work.scss'
 import WorkListItem from './WorkListItem'
-import worksArray from 'utils/worksArray'
+import dataPortfolioItemsArray from 'utils/dataPortfolioItemsArray'
+import { IDataPortfolioItemProps } from 'utils/Models/dataPortfolioItemProps'
 
-type Props = {
+type WorkProps = {
     handleScrollToSection: () => void
+    data: IDataPortfolioItemProps[]
 }
 
-const WorkList = ({ handleScrollToSection }: Props) => {
+const WorkList = ({ handleScrollToSection }: WorkProps) => {
     return (
         <div id="work">
             <Typography variant="h4" component="div" className="work-container">
@@ -17,11 +19,18 @@ const WorkList = ({ handleScrollToSection }: Props) => {
                     <h2 className="work-content-title">Work.</h2>
                     <h3 className="work-content-subtitle">RECENT PROJECTS.</h3>
                     <Grid container spacing={3}>
-                        {worksArray.map(({ id, title, image }, i) => (
-                            <Grid item xs={12} sm={6} md={4} key={id}>
-                                <WorkListItem title={title} image={image} />
-                            </Grid>
-                        ))}
+                        {dataPortfolioItemsArray.map(
+                            ({ id, title, image, page }) => (
+                                <Grid item xs={12} sm={6} md={4} key={id}>
+                                    <WorkListItem
+                                        page={page}
+                                        title={title}
+                                        image={image}
+                                        id={id}
+                                    />
+                                </Grid>
+                            )
+                        )}
                     </Grid>
                     <Button
                         onClick={() => handleScrollToSection()}

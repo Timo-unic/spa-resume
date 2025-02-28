@@ -9,8 +9,8 @@ const Footer = (props: Props) => {
     return (
         <div className="footer-container">
             <div>
-                © 2025 • Avada is a Website Builder for WordPress and eCommerce
-                • All Rights Reserved • Developed by ThemeFusion{' '}
+                © 2025 • Mofey-Studio is a Website Builder for React-Typescript
+                • All Rights Reserved • Developed by MofeyFusion{' '}
             </div>
             <div>
                 <YouTubeIcon

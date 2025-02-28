@@ -14,10 +14,17 @@ function LinearProgressWithLabel(
                 display: 'flex',
                 alignItems: 'center',
                 flexDirection: 'column',
+                marginBottom: '10px',
             }}
         >
             <Box sx={{ width: '100%', mr: 1 }}>
-                <Typography>{props.label}</Typography>
+                <Typography
+                    variant="body2"
+                    sx={{ color: 'text.secondary', fontSize: '16px' }}
+                >
+                    {props.label}
+                    {`  - ${Math.round(props.value)}%`}
+                </Typography>
                 <LinearProgress
                     variant="determinate"
                     {...props}
@@ -27,12 +34,6 @@ function LinearProgressWithLabel(
                         color: 'orange',
                     }}
                 />
-            </Box>
-            <Box sx={{ minWidth: 35 }}>
-                <Typography
-                    variant="body2"
-                    sx={{ color: 'text.secondary' }}
-                >{`${Math.round(props.value)}%`}</Typography>
             </Box>
         </Box>
     )
