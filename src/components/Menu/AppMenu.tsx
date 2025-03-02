@@ -63,7 +63,8 @@ const drawerItems = [
 
 const drawerWidth = 240
 const AppMenu = () => {
-    const { refs, handleScrollToSection } = useContext(MainContext)
+    const { refs, handleScrollToSection, portfolioRef } =
+        useContext(MainContext)
 
     return (
         <Box sx={{ display: 'flex' }}>
@@ -125,7 +126,14 @@ const AppMenu = () => {
                 <Route path="skill" element={<Main />} />
                 <Route path="clients" element={<Main />} />
                 <Route path="contact" element={<Main />} />
-                <Route path="/portfolio-items/:page" element={<Portfolio />} />
+                <Route
+                    path="/portfolio-items/:page"
+                    element={
+                        <div ref={portfolioRef}>
+                            <Portfolio />
+                        </div>
+                    }
+                />
             </Routes>
         </Box>
     )

@@ -5,15 +5,23 @@ import {
     CardMedia,
     Typography,
 } from '@mui/material'
+import { MainContext } from 'context/mainContext'
+import { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { IDataPortfolioItemProps } from 'utils/Models/dataPortfolioItemProps'
 
 function WorkListItem({ image, title, page }: IDataPortfolioItemProps) {
+    const { refs, handleScrollToSection } = useContext(MainContext)
+
     return (
         <>
             <Card sx={{ position: 'relative' }}>
                 <CardActionArea onClick={() => console.log({ page })}>
-                    <Link to={`/portfolio-items/${page}`} className="work-link">
+                    <Link
+                        to={`/portfolio-items/${page}`}
+                        className="work-link"
+                        onClick={() => handleScrollToSection(refs.portfolioRef)}
+                    >
                         <CardMedia
                             sx={{ height: 195 }}
                             image={image}

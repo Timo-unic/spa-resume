@@ -9,6 +9,7 @@ interface IMenuContext {
     skillRef: React.RefObject<HTMLDivElement>
     clientsRef: React.RefObject<HTMLDivElement>
     contactRef: React.RefObject<HTMLDivElement>
+    portfolioRef: React.RefObject<HTMLDivElement>
     handleScrollToSection: (any: any) => void
 }
 
@@ -21,6 +22,7 @@ export const MainContext = createContext<IMenuContext>({
     skillRef: createRef<HTMLDivElement>(),
     clientsRef: createRef<HTMLDivElement>(),
     contactRef: createRef<HTMLDivElement>(),
+    portfolioRef: createRef<HTMLDivElement>(),
     handleScrollToSection: (sectionRef: React.RefObject<HTMLDivElement>) => {},
 })
 
@@ -32,6 +34,7 @@ export const MainState = ({ children }: { children: React.ReactNode }) => {
     const skillRef = useRef<HTMLDivElement>(null)
     const clientsRef = useRef<HTMLDivElement>(null)
     const contactRef = useRef<HTMLDivElement>(null)
+    const portfolioRef = useRef<HTMLDivElement>(null)
 
     const refs = [
         homeRef,
@@ -41,6 +44,7 @@ export const MainState = ({ children }: { children: React.ReactNode }) => {
         skillRef,
         clientsRef,
         contactRef,
+        portfolioRef,
     ]
 
     const scrollToSection = (sectionRef: React.RefObject<HTMLDivElement>) => {
@@ -62,6 +66,7 @@ export const MainState = ({ children }: { children: React.ReactNode }) => {
                 skillRef,
                 clientsRef,
                 contactRef,
+                portfolioRef,
                 handleScrollToSection,
             }}
         >
@@ -70,4 +75,5 @@ export const MainState = ({ children }: { children: React.ReactNode }) => {
     )
 }
 
-export {}
+export {} //TS1208: 'mainContext.tsx' cannot be compiled under '--isolatedModules' because it is considered a global script file.
+// Add an import, export, or an empty 'export {}' statement to make it a module.

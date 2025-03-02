@@ -47,10 +47,11 @@ const SkillsProgress = ({ value, label }: IDataSkillProps) => {
             setProgress((prevProgress) =>
                 prevProgress >= value ? value : prevProgress + 1
             )
-        }, 50)
+        }, 10)
 
         return () => {
             clearInterval(timer)
+            console.log('Динамічний контент оновлюється')
         }
     }, [value])
 

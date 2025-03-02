@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom'
 import dataPortfolioItemsArray, {
     getPortfolioItemsObject,
 } from 'utils/dataPortfolioItemsArray'
-import { Box, Container } from '@mui/material'
+import { Box, Container, Typography } from '@mui/material'
 import './Portfolio.scss'
 import WorkListItem from 'pages/Work/WorkListItem'
 import Grid from '@mui/material/Grid2'
@@ -19,7 +19,7 @@ const Portfolio = ({
     const { page } = useParams()
 
     return (
-        <>
+        <div id="portfolioRef">
             <Container maxWidth={'xl'}>
                 <Box className="portfolio-container">
                     <img
@@ -76,10 +76,35 @@ const Portfolio = ({
                         padding: '20px',
                     }}
                 >
-                    <Grid container spacing={{ md: 2 }} columns={{ md: 12 }}>
-                        {dataPortfolioItemsArray.map(
-                            ({ id, title, image, page }) => (
-                                <Grid key={id} size={{ md: 2 }}>
+                    <Typography
+                        variant="h5"
+                        component="h5"
+                        align="left"
+                        sx={{ marginBottom: '20px', fontWeight: 'bold' }}
+                    >
+                        Related Projects
+                    </Typography>
+                    <Grid
+                        container
+                        spacing={{ md: 2 }}
+                        columns={{ md: 12 }}
+                        sx={{ justifyContent: 'center' }}
+                    >
+                        {dataPortfolioItemsArray
+                            .filter((i) => i.page !== page)
+                            .map(({ id, title, image, page }) => (
+                                <Grid
+                                    key={id}
+                                    size={{ md: 2 }}
+                                    sx={{
+                                        ':hover': {
+                                            transform: 'scale(1.1)',
+                                            opacity: '0.5',
+                                            transition:
+                                                'transform 0.3s ease-in-out, opacity 0.3s ease-in-out',
+                                        },
+                                    }}
+                                >
                                     <WorkListItem
                                         page={page}
                                         title={title}
@@ -87,12 +112,11 @@ const Portfolio = ({
                                         id={id}
                                     />
                                 </Grid>
-                            )
-                        )}
+                            ))}
                     </Grid>
                 </Box>
             </Container>
-        </>
+        </div>
     )
 }
 export default Portfolio
