@@ -1,0 +1,52 @@
+.portfolio-container {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-top: 70px;
+
+   .portfolio-image {
+    width: 55%;
+    height: 70%;
+
+    &:hover {
+        transform: scale(1.05);
+      }
+}
+  .portfolio-content {
+    display: flex;
+    flex: auto;
+    flex-direction: column;
+    width: 45%;
+    margin: 0 30px 100px 70px;
+
+
+    .portfolio-title, 
+    .portfolio-details {
+      font-size: 35px;
+      font-weight: bold;
+  
+    }
+
+    .portfolio-description { 
+      font-size: 16px;
+      line-height: 2.0;
+      margin: 20px 0;
+    }
+    
+    .portfolio-details-skills,
+    .portfolio-details-categories,
+    .portfolio-details-url,
+    .portfolio-details-copyright,
+    .portfolio-details-by {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .portfolio-details-item-list {
+      font-size: 18px;
+      font-weight: normal;
+      color: orange;
+    }
+  }
+}

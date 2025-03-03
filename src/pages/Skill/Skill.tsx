@@ -2,8 +2,7 @@ import { Button, Typography } from '@mui/material'
 import imageSkill from 'assets/skill_bg.jpg'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import './Skill.scss'
-import SkillsProgress from 'components/Band/SkillsProgress'
-import dataSkill from 'utils/dataSkill'
+import BandSkillsProgress from 'components/Band/BandSkillsProgress'
 
 type Props = {
     handleScrollToSection: () => void
@@ -28,13 +27,7 @@ const Skill = ({ handleScrollToSection }: Props) => {
                         sem, vel suscipit augue fermentum nec. Sociis natoque
                         penatibus et magnis dis.
                     </h4>
-                    {dataSkill.map((skill) => (
-                        <SkillsProgress
-                            key={skill.key}
-                            label={skill.label ?? 'Unknown Skill'}
-                            value={skill.value}
-                        />
-                    ))}
+                    <BandSkillsProgress />
                     <h5 className="skill-content-item">
                         THE USER MUST COME FIRST.
                     </h5>
