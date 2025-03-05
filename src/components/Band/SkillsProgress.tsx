@@ -51,7 +51,6 @@ const SkillsProgress = ({ value, label }: IDataSkillProps) => {
 
         return () => {
             clearInterval(timer)
-            console.log('Динамічний контент оновлюється')
         }
     }, [value])
 

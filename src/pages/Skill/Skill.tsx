@@ -3,6 +3,9 @@ import imageSkill from 'assets/skill_bg.jpg'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import './Skill.scss'
 import BandSkillsProgress from 'components/Band/BandSkillsProgress'
+import resetBandSkillsProgress from 'components/HigherOrderComponent/resetBandSkillsProgress'
+
+const DynamicBandSkillProgress = resetBandSkillsProgress(BandSkillsProgress)
 
 type Props = {
     handleScrollToSection: () => void
@@ -27,7 +30,9 @@ const Skill = ({ handleScrollToSection }: Props) => {
                         sem, vel suscipit augue fermentum nec. Sociis natoque
                         penatibus et magnis dis.
                     </h4>
-                    <BandSkillsProgress />
+
+                    <DynamicBandSkillProgress />
+
                     <h5 className="skill-content-item">
                         THE USER MUST COME FIRST.
                     </h5>

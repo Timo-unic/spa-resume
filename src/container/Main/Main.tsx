@@ -5,12 +5,10 @@ import Contact from 'pages/Contact/Contact'
 import Experience from 'pages/Experience/Experience'
 import Home from 'pages/Home/Home'
 import ListClients from 'pages/ListClients/ListClients'
-// import Skill from 'pages/Skill/Skill'
+import Skill from 'pages/Skill/Skill'
 import WorkList from 'pages/Work/WorkList'
-import { lazy, Suspense, useContext } from 'react'
+import { useContext } from 'react'
 import dataPortfolioItemsArray from 'utils/dataPortfolioItemsArray'
-
-const LazySkill = lazy(() => import('pages/Skill/Skill'))
 
 const Main = () => {
     const {
@@ -56,13 +54,11 @@ const Main = () => {
                 />
             </div>
             <div ref={skillRef}>
-                <Suspense>
-                    <LazySkill
-                        handleScrollToSection={() =>
-                            handleScrollToSection(clientsRef)
-                        }
-                    />
-                </Suspense>
+                <Skill
+                    handleScrollToSection={() =>
+                        handleScrollToSection(clientsRef)
+                    }
+                />
             </div>
             <div ref={clientsRef}>
                 <ListClients
